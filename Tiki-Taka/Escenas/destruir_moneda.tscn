@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dciel7j2kc53"]
+
+[ext_resource type="Script" path="res://Scripts/destruir_moneda.gd" id="1_pa4gk"]
+
+[node name="DestruirMoneda" type="Node"]
+script = ExtResource("1_pa4gk")

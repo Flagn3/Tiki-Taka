@@ -1,0 +1,115 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbk3m04uda57c"]
+
+[ext_resource type="Script" path="res://Scripts/resumen_nivel.gd" id="1_y6bts"]
+[ext_resource type="Texture2D" uid="uid://dpmn4wjpw4pvb" path="res://Imagenes/diamante.png" id="2_ik6y2"]
+[ext_resource type="AudioStream" uid="uid://cab4gll2edskf" path="res://Sonidos/coin.wav" id="3_mgfor"]
+
+[node name="Resumen_nivel" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.496977, 0.486358)
+size_flags_horizontal = 4
+script = ExtResource("1_y6bts")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.859
+offset_top = 21.4246
+offset_right = 1676.14
+offset_bottom = 1007.42
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.250182, 0.429857)
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="Control1" type="Control" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Diamante1" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer/Control1"]
+layout_mode = 2
+offset_left = -1008.57
+offset_top = -401.359
+offset_right = -361.566
+offset_bottom = 245.641
+rotation = -0.269608
+scale = Vector2(1.01127, 0.928276)
+size_flags_horizontal = 4
+texture = ExtResource("2_ik6y2")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Control2" type="Control" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Diamante2" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer/Control2"]
+layout_mode = 2
+offset_left = -434.0
+offset_top = -612.0
+offset_right = 338.0
+offset_bottom = 77.0
+texture = ExtResource("2_ik6y2")
+
+[node name="Control3" type="Control" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Diamante3" type="TextureRect" parent="Panel/VBoxContainer/HBoxContainer/Control3"]
+layout_mode = 2
+offset_left = 290.625
+offset_top = -580.422
+offset_right = 937.625
+offset_bottom = 66.578
+rotation = 0.268781
+scale = Vector2(1.01127, 0.928276)
+size_flags_horizontal = 4
+texture = ExtResource("2_ik6y2")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Siguiente_nivel" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Siguiente nivel"
+
+[node name="Reintentar" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Reintentar"
+
+[node name="Salir" type="Button" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Salir"
+
+[node name="SonidoDiamante" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mgfor")
+
+[connection signal="pressed" from="Panel/VBoxContainer/Siguiente_nivel" to="." method="_on_siguiente_nivel_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Reintentar" to="." method="_on_reintentar_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/Salir" to="." method="_on_salir_pressed"]

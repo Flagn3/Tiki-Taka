@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgqswljyjomue"]
+
+[ext_resource type="Texture2D" uid="uid://dsj2r1ny0f2ph" path="res://Sprites/pincho.png" id="1_bud7e"]
+[ext_resource type="PackedScene" uid="uid://snrlb3e7v7f6" path="res://Escenas/zona_de_muerte.tscn" id="3_j3wk3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xaejv"]
+size = Vector2(16, 8)
+
+[node name="pincho" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(4.76837e-07, 0)
+scale = Vector2(1.02257, 1)
+texture = ExtResource("1_bud7e")
+
+[node name="ZonaDeMuerte" parent="." instance=ExtResource("3_j3wk3")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaDeMuerte"]
+position = Vector2(0, 4)
+shape = SubResource("RectangleShape2D_xaejv")

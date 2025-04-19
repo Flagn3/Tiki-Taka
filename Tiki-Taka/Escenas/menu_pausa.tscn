@@ -1,0 +1,84 @@
+[gd_scene load_steps=2 format=3 uid="uid://de10x0r72e12u"]
+
+[ext_resource type="Script" path="res://Scripts/menu_pausa.gd" id="1_2f5dx"]
+
+[node name="MenuPausa" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+script = ExtResource("1_2f5dx")
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 0.184314, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -430.5
+offset_top = -242.0
+offset_right = 430.5
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -192.5
+offset_top = -116.5
+offset_right = 192.5
+offset_bottom = 116.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="reanudar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "REANUDAR"
+
+[node name="volumen" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "VOLUMEN"
+
+[node name="sliderVolumen" type="HSlider" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="resolucion" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "PANTALLA COMPLETA"
+
+[node name="menuPrincipal" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 45
+text = "SALIR"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="pressed" from="VBoxContainer/reanudar" to="." method="_on_reanudar_pressed"]
+[connection signal="pressed" from="VBoxContainer/volumen" to="." method="_on_volumen_pressed"]
+[connection signal="value_changed" from="VBoxContainer/sliderVolumen" to="." method="_on_slider_volumen_value_changed"]
+[connection signal="pressed" from="VBoxContainer/resolucion" to="." method="_on_resolucion_pressed"]
+[connection signal="pressed" from="VBoxContainer/menuPrincipal" to="." method="_on_menu_principal_pressed"]

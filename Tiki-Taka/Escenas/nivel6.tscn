@@ -1,0 +1,1289 @@
+[gd_scene load_steps=21 format=3 uid="uid://dw2rx0850jjv6"]
+
+[ext_resource type="Script" path="res://Scripts/nivel.gd" id="1_2otbg"]
+[ext_resource type="Texture2D" uid="uid://c33sud5hktp61" path="res://Fondos/BG1.png" id="2_cahcp"]
+[ext_resource type="Texture2D" uid="uid://cpwk472tq6pku" path="res://Tiles/Tileset.png" id="2_myio5"]
+[ext_resource type="Texture2D" uid="uid://dxd7e6n48clyb" path="res://Tiles/Dungeon Tile Set.png" id="3_pomrd"]
+[ext_resource type="Texture2D" uid="uid://b4rcp6f7jidhq" path="res://Fondos/BG2.png" id="3_wbcr3"]
+[ext_resource type="PackedScene" uid="uid://bl50mq6h541cr" path="res://Escenas/moneda.tscn" id="4_wge80"]
+[ext_resource type="PackedScene" uid="uid://dp0sgvojioclu" path="res://Escenas/jugador.tscn" id="5_2s2pa"]
+[ext_resource type="PackedScene" uid="uid://dwbynfwxxayqf" path="res://Escenas/fin_nivel.tscn" id="6_d5wvg"]
+[ext_resource type="PackedScene" uid="uid://de10x0r72e12u" path="res://Escenas/menu_pausa.tscn" id="7_u440w"]
+[ext_resource type="PackedScene" uid="uid://bbk3m04uda57c" path="res://Escenas/resumen_nivel.tscn" id="8_jy3b4"]
+[ext_resource type="PackedScene" uid="uid://c6ljv85omwks8" path="res://Escenas/plataformaH.tscn" id="9_d4mre"]
+[ext_resource type="PackedScene" uid="uid://cqsbjacev3ukp" path="res://Escenas/plataformaV.tscn" id="10_icqum"]
+[ext_resource type="PackedScene" uid="uid://snrlb3e7v7f6" path="res://Escenas/zona_de_muerte.tscn" id="11_cot0n"]
+[ext_resource type="PackedScene" uid="uid://dgqswljyjomue" path="res://Escenas/pincho.tscn" id="12_lfq3g"]
+[ext_resource type="PackedScene" uid="uid://c5tklx32wtat" path="res://Escenas/orbe.tscn" id="13_e8cpe"]
+[ext_resource type="PackedScene" uid="uid://b8barqp0hdvhb" path="res://Escenas/enemigoH.tscn" id="14_gjdj0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_njjrw"]
+texture = ExtResource("2_myio5")
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/terrain = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/terrains_peering_bit/right_side = 0
+0:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_side = 0
+1:0/0/terrains_peering_bit/left_side = 0
+2:0/0 = 0
+2:0/0/terrain_set = 0
+2:0/0/terrain = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0/terrains_peering_bit/bottom_side = 0
+2:0/0/terrains_peering_bit/left_side = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8.6875, 9.625, -8, 8, -8, 8)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8.6875, 9.625, -8, 8, -8, 8)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8.6875, 9.625, -8, 8, -8, 8)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8.6875, 9.625, -8, 8, -8, 8)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8.6875, 9.625, -8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/terrain_set = 0
+0:1/0/terrain = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0/terrains_peering_bit/right_side = 0
+0:1/0/terrains_peering_bit/bottom_side = 0
+0:1/0/terrains_peering_bit/top_side = 0
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0/terrains_peering_bit/right_side = 0
+1:1/0/terrains_peering_bit/bottom_side = 0
+1:1/0/terrains_peering_bit/left_side = 0
+1:1/0/terrains_peering_bit/top_side = 0
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0/terrains_peering_bit/bottom_side = 0
+2:1/0/terrains_peering_bit/left_side = 0
+2:1/0/terrains_peering_bit/top_side = 0
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8.6875, 9.625, -8, 8, -8, 8)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8.6875, 9.625, -8, 8, -8, 8)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8.6875, 9.625, -8, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8.6875, 9.625, -8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/terrain_set = 0
+0:2/0/terrain = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 1.3125, 3.125, -3.5625, 0.5)
+0:2/0/terrains_peering_bit/right_side = 0
+0:2/0/terrains_peering_bit/top_side = 0
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 8)
+1:2/0/terrains_peering_bit/right_side = 0
+1:2/0/terrains_peering_bit/left_side = 0
+1:2/0/terrains_peering_bit/top_side = 0
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 1.1875, 2, -8, 8, -8, 8)
+2:2/0/terrains_peering_bit/left_side = 0
+2:2/0/terrains_peering_bit/top_side = 0
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8.6875, 9.625, -8, 8, -8, 8)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8.6875, 9.625, -8, 8, -8, 8)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 6.4375, 6.25, -1.5625, 8, -8, 4.125)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.4375, -3.75, 8, -8, 8, 8, -8, 8, -5.3125, 2.125)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -5.5, 8, -5.5, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -6.5, 0.8125, -2.625, 4.9375, 2.75, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 8)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 8)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 8)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 8)
+7:3/0 = 0
+7:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 8)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 0.5, 8, 8, -8, 8, -5.1875, 0.5)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 5.8125, 0.125, 8, 8, -8, 8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 8)
+4:4/0 = 0
+4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 8)
+5:4/0 = 0
+5:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 8)
+6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 8)
+7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 8)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, 1.3125, 4.875, -5.0625, 0)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 6, -8, 5.875)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 5.8125, 0.125, 1.3125, 4.875, -8, 8)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 8)
+4:5/0 = 0
+4:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yuo3i"]
+texture = ExtResource("3_pomrd")
+1:1/0 = 0
+1:1/0/terrain_set = 0
+1:1/0/terrain = 1
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0/terrains_peering_bit/right_side = 1
+1:1/0/terrains_peering_bit/bottom_side = 1
+2:1/0 = 0
+2:1/0/terrain_set = 0
+2:1/0/terrain = 1
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0/terrains_peering_bit/right_side = 1
+2:1/0/terrains_peering_bit/bottom_side = 1
+2:1/0/terrains_peering_bit/left_side = 1
+3:1/0 = 0
+3:1/0/terrain_set = 0
+3:1/0/terrain = 1
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0/terrains_peering_bit/bottom_side = 1
+3:1/0/terrains_peering_bit/left_side = 1
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, -8, 8, 8, -8, 8)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:1/0 = 0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:1/0 = 0
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:1/0 = 0
+11:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:1/0 = 0
+12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:1/0 = 0
+13:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/terrain_set = 0
+1:2/0/terrain = 1
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0/terrains_peering_bit/right_side = 1
+1:2/0/terrains_peering_bit/bottom_side = 1
+1:2/0/terrains_peering_bit/top_side = 1
+2:2/0 = 0
+2:2/0/terrain_set = 0
+2:2/0/terrain = 1
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0/terrains_peering_bit/right_side = 1
+2:2/0/terrains_peering_bit/bottom_side = 1
+2:2/0/terrains_peering_bit/left_side = 1
+2:2/0/terrains_peering_bit/top_side = 1
+3:2/0 = 0
+3:2/0/terrain_set = 0
+3:2/0/terrain = 1
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0/terrains_peering_bit/bottom_side = 1
+3:2/0/terrains_peering_bit/left_side = 1
+3:2/0/terrains_peering_bit/top_side = 1
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:2/0 = 0
+6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:2/0 = 0
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:2/0 = 0
+9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:2/0 = 0
+10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:2/0 = 0
+11:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:2/0 = 0
+12:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:2/0 = 0
+13:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/terrain_set = 0
+1:3/0/terrain = 1
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0/terrains_peering_bit/right_side = 1
+1:3/0/terrains_peering_bit/top_side = 1
+2:3/0 = 0
+2:3/0/terrain_set = 0
+2:3/0/terrain = 1
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0/terrains_peering_bit/right_side = 1
+2:3/0/terrains_peering_bit/left_side = 1
+2:3/0/terrains_peering_bit/top_side = 1
+3:3/0 = 0
+3:3/0/terrain_set = 0
+3:3/0/terrain = 1
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0/terrains_peering_bit/left_side = 1
+3:3/0/terrains_peering_bit/top_side = 1
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:3/0 = 0
+6:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:3/0 = 0
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:3/0 = 0
+9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:3/0 = 0
+10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:3/0 = 0
+11:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:3/0 = 0
+12:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+13:3/0 = 0
+13:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:4/0 = 0
+8:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:4/0 = 0
+9:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:4/0 = 0
+10:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:4/0 = 0
+11:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:4/0 = 0
+12:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:5/0 = 0
+1:5/0/terrain_set = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:5/0 = 0
+2:5/0/terrain_set = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:5/0 = 0
+3:5/0/terrain_set = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:5/0 = 0
+5:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(8, 8, 8, -8, -8, -8)
+6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, 8, -8)
+8:5/0 = 0
+8:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:5/0 = 0
+9:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:5/0 = 0
+10:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:5/0 = 0
+11:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:5/0 = 0
+12:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:6/0 = 0
+1:6/0/terrain_set = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:6/0 = 0
+2:6/0/terrain_set = 0
+2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:6/0 = 0
+3:6/0/terrain_set = 0
+3:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:6/0 = 0
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:6/0 = 0
+8:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:6/0 = 0
+9:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:6/0 = 0
+10:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:6/0 = 0
+11:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:6/0 = 0
+12:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:7/0 = 0
+1:7/0/terrain_set = 0
+1:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:7/0 = 0
+2:7/0/terrain_set = 0
+2:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:7/0 = 0
+3:7/0/terrain_set = 0
+3:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:7/0 = 0
+6:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+7:7/0 = 0
+7:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+8:7/0 = 0
+8:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+9:7/0 = 0
+9:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+10:7/0 = 0
+10:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+11:7/0 = 0
+11:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:7/0 = 0
+12:7/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:8/0 = 0
+1:9/0 = 0
+2:9/0 = 0
+3:9/0 = 0
+5:9/0 = 0
+7:9/0 = 0
+8:9/0 = 0
+9:9/0 = 0
+10:9/0 = 0
+10:9/0/terrain_set = 0
+10:9/0/terrain = 1
+11:9/0 = 0
+12:9/0 = 0
+13:9/0 = 0
+1:10/0 = 0
+2:10/0 = 0
+3:10/0 = 0
+5:10/0 = 0
+7:10/0 = 0
+8:10/0 = 0
+10:10/0 = 0
+12:10/0 = 0
+13:10/0 = 0
+1:11/0 = 0
+2:11/0 = 0
+5:11/0 = 0
+7:11/0 = 0
+8:11/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+12:11/0 = 0
+13:11/0 = 0
+1:12/0 = 0
+2:12/0 = 0
+3:12/0 = 0
+4:12/0 = 0
+5:12/0 = 0
+6:12/0 = 0
+7:12/0 = 0
+8:12/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+12:12/0 = 0
+2:13/0 = 0
+4:13/0 = 0
+5:13/0 = 0
+6:13/0 = 0
+7:13/0 = 0
+8:13/0 = 0
+9:13/0 = 0
+1:14/0 = 0
+2:14/0 = 0
+3:14/0 = 0
+4:14/0 = 0
+5:14/0 = 0
+6:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+12:14/0 = 0
+13:14/0 = 0
+7:15/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+12:15/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wd2m3"]
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 2
+terrain_set_0/terrain_0/name = "Tierra 0"
+terrain_set_0/terrain_0/color = Color(0.14074, 0.439743, 0.394718, 1)
+terrain_set_0/terrain_1/name = "Ladrillos 1"
+terrain_set_0/terrain_1/color = Color(0.5, 0.4375, 0.25, 1)
+sources/0 = SubResource("TileSetAtlasSource_njjrw")
+sources/1 = SubResource("TileSetAtlasSource_yuo3i")
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ets0k"]
+
+[node name="nivel6" type="Node2D"]
+script = ExtResource("1_2otbg")
+
+[node name="Fondos" type="Node2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="Fondo1" type="Sprite2D" parent="Fondos"]
+position = Vector2(320, 268)
+scale = Vector2(2, 2.70833)
+texture = ExtResource("2_cahcp")
+
+[node name="Fondo2" type="Sprite2D" parent="Fondos"]
+position = Vector2(320, 328)
+scale = Vector2(2, 1.91667)
+texture = ExtResource("3_wbcr3")
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2(-16, -208)
+tile_set = SubResource("TileSet_wd2m3")
+format = 2
+layer_0/name = "Escenario"
+layer_0/tile_data = PackedInt32Array(2162689, 65536, 0, 2162690, 65536, 0, 2162691, 65536, 0, 2162692, 131072, 0, 2162727, 65536, 0, 2162728, 65536, 0, 852009, 65536, 1, 917545, 65536, 1, 983081, 65536, 1, 1048617, 65536, 1, 1114153, 65536, 1, 1179689, 65536, 1, 1245225, 65536, 1, 1310761, 65536, 1, 1376297, 65536, 1, 1441833, 65536, 1, 1507369, 65536, 1, 1572905, 65536, 1, 1638441, 65536, 1, 1703977, 65536, 1, 1769513, 65536, 1, 1966121, 65536, 1, 1900585, 65536, 1, 1835049, 65536, 1, 2031657, 65536, 1, 2097193, 65536, 1, 2162729, 65536, 1, 2228265, 65536, 1, 2293801, 65536, 1, 2359337, 65536, 1, 2424873, 65536, 1, 2162726, 0, 0, 2228262, 0, 2, 2293799, 0, 2, 2293800, 65536, 2, 2228263, 65536, 1, 2228264, 65536, 1, 2228227, 131072, 2, 2293761, 131072, 2, 2228226, 65536, 2, 2228225, 65536, 1, 1376256, 65536, 1, 1441792, 65536, 1, 1507328, 65536, 1, 1572864, 65536, 1, 1638400, 65536, 1, 1703936, 65536, 1, 1769472, 65536, 1, 1835008, 65536, 1, 1900544, 65536, 1, 1966080, 65536, 1, 2031616, 65536, 1, 2097152, 65536, 1, 786465, 65536, 1, 786466, 65536, 1, 786467, 65536, 1, 786468, 65536, 1, 786469, 65536, 1, 786470, 65536, 1, 786471, 65536, 1, 786472, 65536, 1, 786433, 65536, 1, 786434, 65536, 1, 786435, 65536, 1, 786436, 65536, 1, 786437, 65536, 1, 786438, 65536, 1, 786439, 65536, 1, 786440, 65536, 1, 786441, 65536, 1, 786442, 65536, 1, 786443, 65536, 1, 786444, 65536, 1, 786445, 65536, 1, 786446, 65536, 1, 786447, 65536, 1, 786448, 65536, 1, 786449, 65536, 1, 786450, 65536, 1, 786451, 65536, 1, 786452, 65536, 1, 786453, 65536, 1, 786454, 65536, 1, 786455, 65536, 1, 786456, 65536, 1, 786457, 65536, 1, 786458, 65536, 1, 786459, 65536, 1, 786460, 65536, 1, 786461, 65536, 1, 786462, 65536, 1, 786463, 65536, 1, 786464, 65536, 1, 851968, 65536, 1, 917504, 65536, 1, 983040, 65536, 1, 1048576, 65536, 1, 1114112, 65536, 1, 1179648, 65536, 1, 1245184, 65536, 1, 1310720, 65536, 1)
+layer_1/name = "CapaTrasera"
+layer_1/z_index = -1
+
+[node name="Coleccionables" type="Node2D" parent="."]
+position = Vector2(-48, 176)
+
+[node name="Diamante1" parent="Coleccionables" instance=ExtResource("4_wge80")]
+position = Vector2(80, -136)
+
+[node name="Diamante2" parent="Coleccionables" instance=ExtResource("4_wge80")]
+position = Vector2(416, -96)
+
+[node name="Diamante3" parent="Coleccionables" instance=ExtResource("4_wge80")]
+position = Vector2(632, 176)
+
+[node name="Jugador" parent="." instance=ExtResource("5_2s2pa")]
+position = Vector2(16, 320)
+
+[node name="Fin_nivel" parent="." instance=ExtResource("6_d5wvg")]
+position = Vector2(616, 304)
+
+[node name="Plataformas" type="Node2D" parent="."]
+
+[node name="PlataformaV1" parent="Plataformas" instance=ExtResource("10_icqum")]
+position = Vector2(160, 168)
+distancia_max = 100
+direccion = 1
+
+[node name="PlataformaV2" parent="Plataformas" instance=ExtResource("10_icqum")]
+position = Vector2(232, 280)
+distancia_max = 100
+
+[node name="PlataformaV3" parent="Plataformas" instance=ExtResource("10_icqum")]
+position = Vector2(304, 168)
+distancia_max = 100
+direccion = 1
+
+[node name="PlataformaV4" parent="Plataformas" instance=ExtResource("10_icqum")]
+position = Vector2(416, 280)
+distancia_max = 100
+
+[node name="PlataformaH1" parent="Plataformas" instance=ExtResource("9_d4mre")]
+position = Vector2(568, 168)
+distancia_max = 100
+
+[node name="ZonaDeMuerte" parent="." instance=ExtResource("11_cot0n")]
+position = Vector2(224, 248)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaDeMuerte"]
+position = Vector2(94.1791, 150.656)
+shape = SubResource("WorldBoundaryShape2D_ets0k")
+
+[node name="Pinchos" type="Node2D" parent="."]
+
+[node name="pincho1" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(152, 176)
+
+[node name="pincho74" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(104, 56)
+
+[node name="pincho75" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(88, 56)
+
+[node name="pincho76" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(72, 56)
+
+[node name="pincho77" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(56, 56)
+
+[node name="pincho78" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(56, 24)
+rotation = 3.14159
+
+[node name="pincho79" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(72, 24)
+rotation = 3.14159
+
+[node name="pincho80" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(88, 24)
+rotation = 3.14159
+
+[node name="pincho81" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(104, 24)
+rotation = 3.14159
+
+[node name="pincho97" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(120, 16)
+rotation = 3.14159
+
+[node name="pincho98" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(136, 8)
+rotation = 3.14159
+
+[node name="pincho99" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(152, 16)
+rotation = 3.14159
+
+[node name="pincho100" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(136, 24)
+rotation = 3.14159
+
+[node name="pincho101" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(120, 24)
+rotation = 3.14159
+
+[node name="pincho102" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(112, 16)
+rotation = 3.14159
+
+[node name="pincho103" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(88, 16)
+rotation = 3.14159
+
+[node name="pincho104" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(96, 16)
+rotation = 3.14159
+
+[node name="pincho105" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(112, 8)
+rotation = 3.14159
+
+[node name="pincho106" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(120, 8)
+rotation = 3.14159
+
+[node name="pincho107" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(96, 8)
+rotation = 3.14159
+
+[node name="pincho108" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(80, 8)
+rotation = 3.14159
+
+[node name="pincho109" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(64, 8)
+rotation = 3.14159
+
+[node name="pincho110" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(48, 8)
+rotation = 3.14159
+
+[node name="pincho111" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(32, 8)
+rotation = 3.14159
+
+[node name="pincho112" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(16, 8)
+rotation = 3.14159
+
+[node name="pincho113" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(0, 8)
+rotation = 3.14159
+
+[node name="pincho114" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(8, 16)
+rotation = 3.14159
+
+[node name="pincho115" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(24, 16)
+rotation = 3.14159
+
+[node name="pincho116" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(40, 16)
+rotation = 3.14159
+
+[node name="pincho117" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(56, 16)
+rotation = 3.14159
+
+[node name="pincho118" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(72, 16)
+rotation = 3.14159
+
+[node name="pincho119" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(168, 24)
+rotation = 3.14159
+
+[node name="pincho120" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(184, 16)
+rotation = 3.14159
+
+[node name="pincho121" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(192, 8)
+rotation = 3.14159
+
+[node name="pincho122" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(176, 8)
+rotation = 3.14159
+
+[node name="pincho123" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(136, 16)
+rotation = 3.14159
+
+[node name="pincho124" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(152, 8)
+rotation = 3.14159
+
+[node name="pincho125" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(168, 16)
+rotation = 3.14159
+
+[node name="pincho126" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(160, 8)
+rotation = 3.14159
+
+[node name="pincho127" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(208, 8)
+rotation = 3.14159
+
+[node name="pincho128" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(360, 56)
+rotation = 3.14159
+
+[node name="pincho129" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(376, 48)
+rotation = 3.14159
+
+[node name="pincho130" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(400, 40)
+rotation = 3.14159
+
+[node name="pincho131" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(384, 40)
+rotation = 3.14159
+
+[node name="pincho132" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(344, 48)
+rotation = 3.14159
+
+[node name="pincho133" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(336, 40)
+rotation = 3.14159
+
+[node name="pincho134" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(320, 32)
+rotation = 3.14159
+
+[node name="pincho135" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(304, 24)
+rotation = 3.14159
+
+[node name="pincho136" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(312, 16)
+rotation = 3.14159
+
+[node name="pincho137" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(328, 8)
+rotation = 3.14159
+
+[node name="pincho138" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(304, 8)
+rotation = 3.14159
+
+[node name="pincho139" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(288, 8)
+rotation = 3.14159
+
+[node name="pincho140" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(344, 8)
+rotation = 3.14159
+
+[node name="pincho141" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(344, 16)
+rotation = 3.14159
+
+[node name="pincho142" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(336, 24)
+rotation = 3.14159
+
+[node name="pincho143" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(320, 24)
+rotation = 3.14159
+
+[node name="pincho144" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(336, 32)
+rotation = 3.14159
+
+[node name="pincho145" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(352, 32)
+rotation = 3.14159
+
+[node name="pincho146" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(368, 24)
+rotation = 3.14159
+
+[node name="pincho147" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(376, 16)
+rotation = 3.14159
+
+[node name="pincho148" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(392, 8)
+rotation = 3.14159
+
+[node name="pincho149" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(400, 24)
+rotation = 3.14159
+
+[node name="pincho150" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(408, 32)
+rotation = 3.14159
+
+[node name="pincho151" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(408, 16)
+rotation = 3.14159
+
+[node name="pincho152" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(416, 8)
+rotation = 3.14159
+
+[node name="pincho153" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(488, 104)
+rotation = -1.5708
+
+[node name="pincho154" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(488, 120)
+rotation = -1.5708
+
+[node name="pincho155" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(496, 136)
+rotation = -1.5708
+
+[node name="pincho82" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(40, 24)
+rotation = 3.14159
+
+[node name="pincho83" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(24, 24)
+rotation = 3.14159
+
+[node name="pincho84" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(8, 24)
+rotation = 3.14159
+
+[node name="pincho85" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(8, 32)
+rotation = 1.5708
+
+[node name="pincho86" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(8, 48)
+rotation = 1.5708
+
+[node name="pincho87" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(8, 64)
+rotation = 1.5708
+
+[node name="pincho88" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(8, 80)
+rotation = 1.5708
+
+[node name="pincho89" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(8, 96)
+rotation = 1.5708
+
+[node name="pincho90" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(8, 112)
+rotation = 1.5708
+
+[node name="pincho91" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(8, 120)
+
+[node name="pincho92" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(48, 120)
+
+[node name="pincho93" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(48, 112)
+rotation = -1.5708
+
+[node name="pincho94" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(48, 96)
+rotation = -1.5708
+
+[node name="pincho95" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(48, 80)
+rotation = -1.5708
+
+[node name="pincho96" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(48, 72)
+rotation = -1.5708
+
+[node name="pincho16" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(216, 256)
+
+[node name="pincho17" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(232, 256)
+
+[node name="pincho18" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(248, 256)
+
+[node name="pincho19" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(296, 176)
+
+[node name="pincho20" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(312, 176)
+
+[node name="pincho21" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(392, 192)
+
+[node name="pincho22" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(408, 192)
+
+[node name="pincho23" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(424, 192)
+
+[node name="pincho24" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(424, 200)
+
+[node name="pincho25" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(408, 200)
+
+[node name="pincho26" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(552, 224)
+
+[node name="pincho27" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(568, 208)
+
+[node name="pincho28" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(584, 176)
+
+[node name="pincho29" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(536, 288)
+
+[node name="pincho30" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(544, 240)
+rotation = -1.5708
+
+[node name="pincho31" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(544, 256)
+rotation = -1.5708
+
+[node name="pincho32" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(544, 272)
+rotation = -1.5708
+
+[node name="pincho33" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(544, 288)
+rotation = -1.5708
+
+[node name="pincho34" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(368, 184)
+rotation = -1.5708
+
+[node name="pincho35" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(368, 168)
+rotation = -1.5708
+
+[node name="pincho36" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(352, 160)
+rotation = -1.5708
+
+[node name="pincho37" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(360, 168)
+rotation = -1.5708
+
+[node name="pincho38" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(376, 200)
+rotation = -1.5708
+
+[node name="pincho39" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(368, 192)
+rotation = -1.5708
+
+[node name="pincho40" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(352, 144)
+rotation = -1.5708
+
+[node name="pincho41" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(344, 136)
+rotation = -1.5708
+
+[node name="pincho42" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(480, 136)
+rotation = -1.5708
+
+[node name="pincho43" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(480, 120)
+rotation = -1.5708
+
+[node name="pincho44" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(480, 104)
+rotation = -1.5708
+
+[node name="pincho45" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(576, 192)
+rotation = -1.5708
+
+[node name="pincho46" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(576, 208)
+rotation = -1.5708
+
+[node name="pincho47" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(560, 224)
+rotation = -1.5708
+
+[node name="pincho48" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(528, 304)
+rotation = -1.5708
+
+[node name="pincho49" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(528, 320)
+rotation = -1.5708
+
+[node name="pincho50" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(520, 336)
+rotation = -1.5708
+
+[node name="pincho51" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(528, 336)
+rotation = -1.5708
+
+[node name="pincho52" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(528, 352)
+rotation = -1.5708
+
+[node name="pincho53" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(536, 360)
+rotation = -1.5708
+
+[node name="pincho54" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(384, 184)
+rotation = 1.5708
+
+[node name="pincho55" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(384, 168)
+rotation = 1.5708
+
+[node name="pincho56" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(384, 152)
+rotation = 1.5708
+
+[node name="pincho57" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(384, 136)
+rotation = 1.5708
+
+[node name="pincho58" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(384, 120)
+rotation = 1.5708
+
+[node name="pincho59" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(384, 104)
+rotation = 1.5708
+
+[node name="pincho60" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(376, 152)
+rotation = 1.5708
+
+[node name="pincho61" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(376, 136)
+rotation = 1.5708
+
+[node name="pincho62" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(376, 120)
+rotation = 1.5708
+
+[node name="pincho63" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(368, 152)
+rotation = 1.5708
+
+[node name="pincho64" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(512, 136)
+rotation = 1.5708
+
+[node name="pincho65" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(512, 120)
+rotation = 1.5708
+
+[node name="pincho66" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(520, 120)
+rotation = 1.5708
+
+[node name="pincho67" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(528, 112)
+rotation = 1.5708
+
+[node name="pincho68" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(528, 104)
+rotation = 1.5708
+
+[node name="pincho69" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(520, 104)
+rotation = 1.5708
+
+[node name="pincho70" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(512, 104)
+rotation = 1.5708
+
+[node name="pincho71" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(504, 104)
+rotation = 1.5708
+
+[node name="pincho72" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(504, 136)
+rotation = 1.5708
+
+[node name="pincho73" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(496, 136)
+rotation = 1.5708
+
+[node name="pincho156" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(504, 120)
+rotation = 1.5708
+
+[node name="pincho157" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(488, 88)
+rotation = 1.5708
+
+[node name="pincho158" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(536, 88)
+rotation = 1.5708
+
+[node name="pincho159" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(536, 80)
+rotation = 1.5708
+
+[node name="pincho160" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(528, 80)
+rotation = 1.5708
+
+[node name="pincho161" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(520, 72)
+rotation = 1.5708
+
+[node name="pincho162" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(512, 72)
+rotation = 1.5708
+
+[node name="pincho163" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(472, 88)
+rotation = -1.5708
+
+[node name="pincho164" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(480, 72)
+rotation = -1.5708
+
+[node name="pincho165" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(488, 56)
+rotation = -1.5708
+
+[node name="pincho166" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(480, 40)
+rotation = -1.5708
+
+[node name="pincho167" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(480, 24)
+rotation = -1.5708
+
+[node name="pincho168" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(488, 16)
+rotation = -1.5708
+
+[node name="pincho169" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(488, 0)
+rotation = -1.5708
+
+[node name="pincho170" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(496, 8)
+rotation = -1.5708
+
+[node name="pincho171" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(488, 32)
+rotation = -1.5708
+
+[node name="pincho172" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(496, 48)
+rotation = -1.5708
+
+[node name="pincho173" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(528, 56)
+rotation = 1.5708
+
+[node name="pincho174" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(536, 48)
+rotation = 1.5708
+
+[node name="pincho175" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(536, 32)
+rotation = 1.5708
+
+[node name="pincho176" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(528, 24)
+rotation = 1.5708
+
+[node name="pincho177" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(520, 8)
+rotation = 1.5708
+
+[node name="pincho178" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(512, 0)
+rotation = 1.5708
+
+[node name="pincho179" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(512, 24)
+rotation = 1.5708
+
+[node name="pincho180" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(520, 32)
+rotation = 1.5708
+
+[node name="pincho181" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(512, 48)
+rotation = 1.5708
+
+[node name="pincho182" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(504, 88)
+rotation = 1.5708
+
+[node name="pincho183" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(496, 80)
+rotation = 1.5708
+
+[node name="pincho184" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(592, 192)
+rotation = 1.5708
+
+[node name="pincho185" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(592, 208)
+rotation = 1.5708
+
+[node name="pincho186" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(592, 224)
+rotation = 1.5708
+
+[node name="pincho187" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(584, 232)
+rotation = 1.5708
+
+[node name="pincho188" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(576, 240)
+rotation = 1.5708
+
+[node name="pincho189" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(568, 256)
+rotation = 1.5708
+
+[node name="pincho190" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(568, 240)
+rotation = 1.5708
+
+[node name="pincho191" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(560, 256)
+rotation = 1.5708
+
+[node name="pincho193" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(560, 288)
+rotation = 1.5708
+
+[node name="pincho194" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(552, 304)
+rotation = 1.5708
+
+[node name="pincho195" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(544, 312)
+rotation = 1.5708
+
+[node name="pincho197" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(552, 360)
+rotation = 1.5708
+
+[node name="pincho198" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(552, 344)
+rotation = 1.5708
+
+[node name="pincho199" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(560, 272)
+rotation = 1.5708
+
+[node name="pincho2" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(168, 176)
+
+[node name="pincho3" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(168, 192)
+rotation = 3.14159
+
+[node name="pincho4" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(152, 192)
+rotation = 3.14159
+
+[node name="pincho5" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(216, 272)
+rotation = 3.14159
+
+[node name="pincho6" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(232, 272)
+rotation = 3.14159
+
+[node name="pincho7" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(248, 272)
+rotation = 3.14159
+
+[node name="pincho8" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(296, 192)
+rotation = 3.14159
+
+[node name="pincho9" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(312, 192)
+rotation = 3.14159
+
+[node name="pincho10" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(408, 216)
+rotation = 3.14159
+
+[node name="pincho11" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(424, 216)
+rotation = 3.14159
+
+[node name="pincho12" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(392, 208)
+rotation = 3.14159
+
+[node name="pincho13" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(488, 152)
+rotation = 3.14159
+
+[node name="pincho14" parent="Pinchos" instance=ExtResource("12_lfq3g")]
+position = Vector2(504, 152)
+rotation = 3.14159
+
+[node name="Orbes" type="Node2D" parent="."]
+
+[node name="orbe1" parent="Orbes" instance=ExtResource("13_e8cpe")]
+position = Vector2(128, 40)
+
+[node name="orbe2" parent="Orbes" instance=ExtResource("13_e8cpe")]
+position = Vector2(408, 80)
+
+[node name="Enemigos" type="Node2D" parent="."]
+
+[node name="EnemigoH1" parent="Enemigos" instance=ExtResource("14_gjdj0")]
+position = Vector2(584, 328)
+
+[node name="EnemigoH2" parent="Enemigos" instance=ExtResource("14_gjdj0")]
+position = Vector2(632, 192)
+
+[node name="EnemigoH3" parent="Enemigos" instance=ExtResource("14_gjdj0")]
+position = Vector2(592, 240)
+
+[node name="MenuPausa" parent="." instance=ExtResource("7_u440w")]
+visible = false
+offset_left = 325.0
+offset_top = 183.0
+offset_right = 325.0
+offset_bottom = 183.0
+scale = Vector2(0.349449, 0.402842)
+
+[node name="Resumen_nivel" parent="." instance=ExtResource("8_jy3b4")]
+visible = false
+offset_left = 307.0
+offset_top = 176.0
+offset_right = 307.0
+offset_bottom = 176.0
+scale = Vector2(0.624084, 0.597035)

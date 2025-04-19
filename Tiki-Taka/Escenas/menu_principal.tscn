@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwlfqg8pd8k64"]
+
+[ext_resource type="Script" path="res://Scripts/menu_principal.gd" id="1_pr48t"]
+[ext_resource type="Texture2D" uid="uid://ciaec65ibvdko" path="res://Imagenes/titulo.png" id="3_qsuns"]
+[ext_resource type="Texture2D" uid="uid://bsvxcj5a33o2l" path="res://Imagenes/portada con espada.png" id="3_tkpul"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlfwm"]
+bg_color = Color(0.310617, 0.310617, 0.310617, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlvv2"]
+bg_color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+
+[node name="MenuPrincipal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pr48t")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_tkpul")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.0
+offset_top = -40.0
+offset_right = 193.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.709395, 0.611728)
+theme_override_constants/separation = 20
+
+[node name="jugar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_vlfwm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlvv2")
+text = "JUGAR"
+
+[node name="opciones" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_vlfwm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlvv2")
+text = "OPCIONES"
+
+[node name="salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_vlfwm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlvv2")
+text = "SALIR"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 344.0
+offset_right = 131.0
+offset_bottom = 367.0
+theme_override_colors/font_color = Color(0.768627, 0.47451, 0.239216, 1)
+theme_override_font_sizes/font_size = 15
+text = "By Flavio García"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -640.0
+offset_top = -448.0
+offset_right = 1280.0
+offset_bottom = 632.0
+texture = ExtResource("3_qsuns")
+
+[connection signal="pressed" from="VBoxContainer/jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/opciones" to="." method="_on_opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/salir" to="." method="_on_salir_pressed"]

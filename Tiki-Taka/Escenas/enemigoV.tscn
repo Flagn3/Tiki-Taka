@@ -1,0 +1,95 @@
+[gd_scene load_steps=14 format=3 uid="uid://ci4eo25p5jfk2"]
+
+[ext_resource type="Script" path="res://Scripts/enemigoV.gd" id="1_3mc7l"]
+[ext_resource type="Texture2D" uid="uid://dj8f7ppgo2mq5" path="res://Sprites/BirdSprite.png" id="2_0b3ag"]
+[ext_resource type="PackedScene" uid="uid://snrlb3e7v7f6" path="res://Escenas/zona_de_muerte.tscn" id="3_5vmup"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnb71"]
+atlas = ExtResource("2_0b3ag")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v78yy"]
+atlas = ExtResource("2_0b3ag")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqwvv"]
+atlas = ExtResource("2_0b3ag")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vbiqx"]
+atlas = ExtResource("2_0b3ag")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3gbo5"]
+atlas = ExtResource("2_0b3ag")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8xl2y"]
+atlas = ExtResource("2_0b3ag")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olx8h"]
+atlas = ExtResource("2_0b3ag")
+region = Rect2(96, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvmj5"]
+atlas = ExtResource("2_0b3ag")
+region = Rect2(112, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fiisl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnb71")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v78yy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqwvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vbiqx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3gbo5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8xl2y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olx8h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvmj5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 14.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xaejv"]
+size = Vector2(14, 6)
+
+[node name="EnemigoV" type="Node2D"]
+script = ExtResource("1_3mc7l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_fiisl")
+autoplay = "default"
+frame_progress = 0.281511
+
+[node name="ZonaDeMuerte" parent="." instance=ExtResource("3_5vmup")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZonaDeMuerte"]
+shape = SubResource("RectangleShape2D_xaejv")
+
+[node name="RayCastArriba" type="RayCast2D" parent="."]
+rotation = 1.5708
+target_position = Vector2(-11, 0)
+collide_with_areas = true
+
+[node name="RayCastAbajo" type="RayCast2D" parent="."]
+rotation = 1.5708
+target_position = Vector2(11, 0)
+collide_with_areas = true

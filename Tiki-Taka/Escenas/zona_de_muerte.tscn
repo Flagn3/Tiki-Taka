@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://snrlb3e7v7f6"]
+
+[ext_resource type="Script" path="res://Scripts/zona_de_muerte.gd" id="1_nnfkn"]
+[ext_resource type="AudioStream" uid="uid://y1twn282ybw6" path="res://Sonidos/explosion.wav" id="2_a4mtb"]
+
+[node name="ZonaDeMuerte" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_nnfkn")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[node name="SonidoMuerte" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_a4mtb")
+bus = &"Efectos Sonido"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

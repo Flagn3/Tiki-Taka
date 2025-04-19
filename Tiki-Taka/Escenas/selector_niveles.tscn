@@ -1,0 +1,111 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl5arainahory"]
+
+[ext_resource type="Script" path="res://Scripts/selector_niveles.gd" id="1_e3tdv"]
+
+[node name="selector_niveles" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e3tdv")
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="DiamantesLabel" type="Label" parent="GridContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GridContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="DiamantesLabel" type="Label" parent="GridContainer/VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GridContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="DiamantesLabel" type="Label" parent="GridContainer/VBoxContainer3"]
+layout_mode = 2
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GridContainer/VBoxContainer4"]
+layout_mode = 2
+
+[node name="DiamantesLabel" type="Label" parent="GridContainer/VBoxContainer4"]
+layout_mode = 2
+
+[node name="VBoxContainer5" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GridContainer/VBoxContainer5"]
+layout_mode = 2
+
+[node name="DiamantesLabel" type="Label" parent="GridContainer/VBoxContainer5"]
+layout_mode = 2
+
+[node name="VBoxContainer6" type="VBoxContainer" parent="GridContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GridContainer/VBoxContainer6"]
+layout_mode = 2
+
+[node name="DiamantesLabel" type="Label" parent="GridContainer/VBoxContainer6"]
+layout_mode = 2
+
+[node name="VBoxContainer7" type="VBoxContainer" parent="GridContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GridContainer/VBoxContainer7"]
+layout_mode = 2
+
+[node name="DiamantesLabel" type="Label" parent="GridContainer/VBoxContainer7"]
+layout_mode = 2
+
+[node name="VBoxContainer8" type="VBoxContainer" parent="GridContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GridContainer/VBoxContainer8"]
+layout_mode = 2
+
+[node name="DiamantesLabel" type="Label" parent="GridContainer/VBoxContainer8"]
+layout_mode = 2
+
+[node name="VBoxContainer9" type="VBoxContainer" parent="GridContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GridContainer/VBoxContainer9"]
+layout_mode = 2
+
+[node name="DiamantesLabel" type="Label" parent="GridContainer/VBoxContainer9"]
+layout_mode = 2

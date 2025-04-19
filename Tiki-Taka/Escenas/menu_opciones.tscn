@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://dnjmohsdhqstn"]
+
+[ext_resource type="Script" path="res://Scripts/menu_opciones.gd" id="1_l8m8y"]
+[ext_resource type="Texture2D" uid="uid://bsvxcj5a33o2l" path="res://Imagenes/portada con espada.png" id="3_qthjl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlfwm"]
+bg_color = Color(0.310617, 0.310617, 0.310617, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nlvv2"]
+bg_color = Color(0.0470588, 0.0470588, 0.0470588, 1)
+
+[node name="Opciones" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_l8m8y")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_qthjl")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -40.0
+offset_right = 369.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.562159, 0.615268)
+theme_override_constants/separation = 20
+
+[node name="volumen" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_vlfwm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlvv2")
+text = "VOLUMEN"
+
+[node name="reguladorVolumen" type="HSlider" parent="VBoxContainer"]
+visible = false
+layout_mode = 2
+max_value = 1.0
+step = 0.1
+ticks_on_borders = true
+
+[node name="resolucion" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_vlfwm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlvv2")
+text = "PANTALLA COMPLETA"
+
+[node name="atras" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_vlfwm")
+theme_override_styles/normal = SubResource("StyleBoxFlat_nlvv2")
+text = "ATRAS"
+
+[connection signal="pressed" from="VBoxContainer/volumen" to="." method="_on_volumen_pressed"]
+[connection signal="value_changed" from="VBoxContainer/reguladorVolumen" to="." method="_on_regulador_volumen_value_changed"]
+[connection signal="pressed" from="VBoxContainer/resolucion" to="." method="_on_resolucion_pressed"]
+[connection signal="pressed" from="VBoxContainer/atras" to="." method="_on_atras_pressed"]

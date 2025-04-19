@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://c5tklx32wtat"]
+
+[ext_resource type="Texture2D" uid="uid://p2rulxplvghk" path="res://Sprites/orbe.png" id="1_031ih"]
+[ext_resource type="Script" path="res://Scripts/orbe.gd" id="1_ia8mr"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_10g3a"]
+atlas = ExtResource("1_031ih")
+region = Rect2(0, 0, 1184, 1184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chsdb"]
+atlas = ExtResource("1_031ih")
+region = Rect2(1184, 0, 1184, 1184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_731oe"]
+atlas = ExtResource("1_031ih")
+region = Rect2(2368, 0, 1184, 1184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8at5d"]
+atlas = ExtResource("1_031ih")
+region = Rect2(3552, 0, 1184, 1184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v3by"]
+atlas = ExtResource("1_031ih")
+region = Rect2(4736, 0, 1184, 1184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q06qe"]
+atlas = ExtResource("1_031ih")
+region = Rect2(5920, 0, 1184, 1184)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_garcd"]
+atlas = ExtResource("1_031ih")
+region = Rect2(7104, 0, 1184, 1184)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_atl02"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_10g3a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chsdb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_731oe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8at5d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v3by")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q06qe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_garcd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k5qi4"]
+radius = 8.0
+
+[node name="orbe" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_ia8mr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.113815, 0.240663)
+scale = Vector2(0.0133213, 0.01392)
+sprite_frames = SubResource("SpriteFrames_atl02")
+animation = &"idle"
+frame_progress = 0.310718
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_k5qi4")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
