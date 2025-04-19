@@ -22,7 +22,7 @@ Este proyecto ha sido desarrollado empleando las siguientes tecnologías:
 ---
 
 ## :computer: Instalación
-A continuación, se explican los pasos necesarios para poder ejecutar el videojuego en tu dispositivo:
+A continuación, se explican los pasos necesarios para poder ejecutar el videojuego en tu dispositivo Windows:
 #### 1. Clonar o descargar el repositorio
 Puedes clonar el repositorio utilizando Git o descargar directamente el archivo zip desde GitHub.
 - Clonar el repositorio:
